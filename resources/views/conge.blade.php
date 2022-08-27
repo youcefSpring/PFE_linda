@@ -58,10 +58,10 @@
 										</div>
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
-                                    <label for="year">Année d'étude</label>
+                                    <label for="year_study">Année d'étude</label>
 										<div class="form-group">
 											<i class="fa fa-file"></i>
-											<input name="year" type="text" placeholder="Année d'étude" required>
+											<input name="year_study" type="text" placeholder="Année d'étude" required>
 										</div>
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
