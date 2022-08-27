@@ -17,11 +17,12 @@
                                     <div class="navbar-collapse">
                                         <!-- Main Menu -->
                                         <ul id="nav" class="nav menu navbar-nav">
-                                            <li class="active"><a href="index.html"><i class="fa fa-home"></i>Acceuil</a></li>
+                                            <li class="active"><a href="{{route('/')}}"><i class="fa fa-home"></i>Acceuil</a></li>
 
                                             <li><a href="{{route('login')}}"><i class="fa fa-address-book"></i>Connexion</a> </li>
 
                                              <li><a href="{{ route('condidat') }}"><i class="fa fa-address-book"></i>Candidateur</a> </li>
+                                             <li><a href="{{ route('conge') }}"><i class="fa fa-address-book"></i>Cangé Académique</a> </li>
 
                                         </ul>
                                         <!-- End Main Menu -->

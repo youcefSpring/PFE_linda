@@ -1,50 +1,17 @@
 @extends('header')
 
 		<!--/ End Header -->
-        <header class="header">
-            <!-- Header Inner -->
-            <div class="header-inner overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <!-- Logo -->
-                            <div class="logo">
-                                <img src="{{ asset('front/image/said.png')}}" alt="#" width=90 px;>
-                            </div>
-                            <!--/ End Logo -->
-
-                        </div>
-                        <div class="col-lg-9 col-md-9 col-12">
-                            <div class="menu-bar">
-                                <nav class="navbar navbar-default">
-                                    <div class="navbar-collapse">
-                                        <!-- Main Menu -->
-                                        <ul id="nav" class="nav menu navbar-nav">
-                                            <li class="active"><a href="index.html"><i class="fa fa-home"></i>Acceuil</a></li>
-
-                                            <li><a href="{{route('login')}}"><i class="fa fa-address-book"></i>Connexion</a> </li>
-
-                                             <li><a href="{{ route('condidat') }}"><i class="fa fa-address-book"></i>Candidateur</a> </li>
-                                             <li><a href="{{ route('condidat') }}"><i class="fa fa-address-book"></i>Cangé Académique</a> </li>
-
-                                        </ul>
-                                        <!-- End Main Menu -->
-                                    </div>
-                                </nav>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--/ End Header Inner -->
-        </header>
+       @section('header')
+       @extends('header_2')
+       @endsection
+        <!-- <img src="{{asset('/condidats/11/5.png')}}" alt=""> -->
 		<!-- Breadcrumb -->
+        @section('body')
 		<div class="breadcrumbs overlay" style="background-image:url('images/breadcrumb-bg.jpg')">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-6 col-md-6 col-12">
-						<h2>Congé académiques</h2>
+					<div class="col-lg-12 col-md-12 col-12">
+						<h2>Demande Congé académique</h2>
 					</div>
 					<!-- <div class="col-lg-6 col-md-6 col-12">
 						<ul class="bread-list">
@@ -70,45 +37,129 @@
 					</div> -->
 				</div>
 				<div class="row">
-					<div class="col-lg-8 col-md-8 col-12">
+					<div class="col-lg-12 col-md-12 col-12">
 						<div class="form-head">
 							<!-- Contact Form -->
-							<form class="form" action="mail/mail.php">
+							<form class="form" action="{{ route('admin.storeCondidate')}}" enctype="multipart/form-data" method="POST">
+                                @csrf
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-12">
+                                    <label for="name">Nom & Prénom</label>
 										<div class="form-group">
 											<i class="fa fa-user"></i>
-											<input name="first-name" type="text" placeholder="First name">
+											<input name="name" type="text" placeholder="Nom et prénom" required>
 										</div>
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
+                                    <label for="matricule">Matricule</label>
 										<div class="form-group">
 											<i class="fa fa-envelope"></i>
-											<input name="last-name" type="text" placeholder="Last name">
+											<input name="matricule" type="text" placeholder="Matricule" required>
 										</div>
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
+                                    <label for="year">Année d'étude</label>
 										<div class="form-group">
 											<i class="fa fa-envelope"></i>
-											<input name="email" type="email" placeholder="Email address">
+											<input name="year" type="text" placeholder="Année d'étude" required>
 										</div>
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
+                                    <label for="domaine">Domaine</label>
 										<div class="form-group">
 											<i class="fa fa-envelope"></i>
-											<input name="url" type="url" placeholder="Website url">
+											<input name="domaine" type="text" placeholder="Domaine" required>
 										</div>
 									</div>
-									<div class="col-12">
-										<div class="form-group message">
-											<i class="fa fa-pencil"></i>
-											<textarea name="message" placeholder="Type your message"></textarea>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                    <label for="filiere">Filière</label>
+										<div class="form-group">
+											<i class="fa fa-phone"></i>
+											<input name="filiere" type="text" placeholder="Filière" required>
+										</div>
+									</div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                    <label for="speciality">Spécilaité</label>
+										<div class="form-group">
+											<i class="fa fa-envelope"></i>
+											<input name="speciality" type="text" placeholder="Spécilaité" required>
+										</div>
+									</div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                    <label for="email">Email</label>
+										<div class="form-group">
+											<i class="fa fa-envelope"></i>
+											<input name="email" type="text" placeholder="Email" required>
+										</div>
+									</div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                    <label for="phone">Numéro de téléphone</label>
+										<div class="form-group">
+											<i class="fa fa-file"></i>
+											<input name="phone" type="number" placeholder="Numéro de téléphone" required>
+										</div>
+									</div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                    <label for="annee_univ">Année universitaire</label>
+										<div class="form-group">
+											<i class="fa fa-file"></i>
+											<input name="annee_univ" type="file" placeholder="Email" required>
+										</div>
+									</div>
+
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                    <label for="c_etudiant">Carte d'étudiant</label>
+										<div class="form-group">
+											<i class="fa fa-file"></i>
+											<input name="c_etudiant" type="file" placeholder="Carte d'étudiant" required>
+										</div>
+									</div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                    <label for="c_inscription">Certificat d’inscription de l’année universitaire en cours</label>
+										<div class="form-group">
+											<i class="fa fa-file"></i>
+											<input name="c_inscription" type="file" placeholder="Certificat d’inscription" required>
+										</div>
+									</div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                    <label for="p_justificative">Pièce justificative</label>
+										<div class="form-group">
+											<i class="fa fa-file"></i>
+											<input name="p_justificative" type="file" placeholder="Pièce justificative" required>
+										</div>
+									</div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                    <label for="raison">Raison de la demande du congé académique</label>
+										<div class="form-group">
+
+											<select name="raison" id="raison" class="form-control">
+                                                <option value="">Sélectionnez type d'inscription</option>
+                                                <option value="Maladie chronique invalidante">Maladie chronique invalidante</option>
+                                                <option value="Maternité">Maternité</option>
+                                                <option value="Maladie chronique longue durée">Maladie chronique longue durée</option>
+                                                <option value="Service national">Service national</option>
+                                                <option value="Obligations familiales relatives aux ascendants et/ou descendants, déplacement duconjoint, ou des parents liés à la fonction, …).">
+                                                    Obligations familiales relatives aux ascendants et/ou descendants, <br>
+                                                     déplacement duconjoint, ou des parents liés à la fonction)</option>
+                                            </select>
+										</div>
+									</div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                    <label for="another_raison">Autre raison</label>
+										<div class="form-group">
+											<i class="fa fa-file"></i>
+											<input name="another_raison" type="text" placeholder="Autre raison">
 										</div>
 									</div>
 									<div class="col-12">
 										<div class="form-group">
 											<div class="button">
-												<button type="submit" class="btn primary">Send Message</button>
+												<button type="submit" class="btn primary">Envoyer</button>
 											</div>
 										</div>
 									</div>
@@ -117,150 +168,10 @@
 							<!--/ End Contact Form -->
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-4 col-12">
-						<div class="contact-right">
-							<!-- Contact-Info -->
-							<div class="contact-info">
-								<div class="icon"><i class="fa fa-map"></i></div>
-								<h3>Our Collage Location</h3>
-								<p>60 Grant ave. Central New Road 0708, United states of America</p>
-							</div>
-							<!-- Contact-Info -->
-							<div class="contact-info">
-								<div class="icon"><i class="fa fa-envelope"></i></div>
-								<h3>contact information</h3>
-								<p><a href="mailto:info@example.com">support@yourwebsite.com</a></p>
-								<p>+123 456-7890</p>
-							</div>
-							<!-- Contact-Info -->
-						</div>
-					</div>
+
 				</div>
 			</div>
 		</section>
 		<!--/ End Contact Us -->
+@endsection
 
-		<!-- Clients CSS -->
-
-		<!--/ End Clients CSS -->
-
-		<!-- Footer -->
-		<footer class="footer section">
-			<!-- Footer Top -->
-			<div class="footer-top overlay">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-4 col-md-6 col-12">
-							<!-- About -->
-							<div class="single-widget about">
-								<h2>About Eduland</h2>
-								<ul class="list">
-									<li><i class="fa fa-phone"></i>Phone: +123 456-7890 </li>
-									<li><i class="fa fa-envelope"></i>Email: <a href="mailto:info@youremail.com">Info@youremail.com</a></li>
-									<li><i class="fa fa-map-o"></i>Address: 123, Jolfikar state, Us</li>
-								</ul>
-								<!-- Social -->
-								<ul class="social">
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li class="active"><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-									<li><a href="#"><i class="fa fa-youtube"></i></a></li>
-								</ul>
-								<!-- End Social -->
-							</div>
-							<!--/ End About -->
-						</div>
-						<div class="col-lg-4 col-md-6 col-12">
-							<!-- Useful Links -->
-							<div class="single-widget list">
-								<h2>Useful Links</h2>
-								<ul>
-									<li><i class="fa fa-angle-right"></i><a href="#">Home</a></li>
-									<li><i class="fa fa-angle-right"></i><a href="#">About Eduland</a></li>
-									<li><i class="fa fa-angle-right"></i><a href="#">Our Courses</a></li>
-									<li><i class="fa fa-angle-right"></i><a href="#">Upcoming Events</a></li>
-									<li><i class="fa fa-angle-right"></i><a href="#">Faq's</a></li>
-								</ul>
-							</div>
-							<!--/ End Useful Links -->
-						</div>
-						<div class="col-lg-4 col-md-6 col-12">
-							<!-- Useful Links -->
-							<div class="single-widget opening-times">
-								<h2>Opening Hourse</h2>
-								<ul class="list">
-									<li><span>Saturday - Sunday</span><div class="value">09am - 05pm</div></li>
-									<li><span>Monday - Twisday</span><div class="value">10AM - 02PM</div></li>
-									<li><span>Widnesday</span><div class="value">10AM - 12PM</div></li>
-									<li><span>Thursday</span><div class="value">08AM - 05PM</div></li>
-									<li><span>Friday</span><div class="value off">closed</div></li>
-								</ul>
-							</div>
-							<!--/ End Useful Links -->
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--/ End Footer Top -->
-			<!-- Footer Bottom -->
-			<div class="footer-bottom">
-				<div class="container">
-					<div class="row">
-						<div class="col-12">
-							<!-- Copyright -->
-							<div class="copyright">
-								<p>© Copyright Eduland 2019. Design & Development by <a href="http://themelamp.com">www.themelamp.com</a>, Theme Release By <a href="http://codeglim.com">www.codeglim.com</a></p>
-							</div>
-							<!--/ End Copyright -->
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--/ End Footer Bottom -->
-		</footer>
-		<!--/ End Footer -->
-
-		<!-- Jquery JS-->
-        <script src="{{ asset('front/js/jquery.min.js')}}"></script>
-        <script src="{{ asset('front/js/jquery-migrate.min.js')}}"></script>
-		<!-- Colors JS-->
-        <script src="{{ asset('front/js/colors.js')}}"></script>
-		<!-- Popper JS-->
-        <script src="{{ asset('front/js/popper.min.js')}}"></script>
-		<!-- Bootstrap JS-->
-        <script src="{{ asset('front/js/bootstrap.min.js')}}"></script>
-		<!-- Owl Carousel JS-->
-        <script src="{{ asset('front/js/owl.carousel.min.js')}}"></script>
-		<!-- Jquery Steller JS -->
-		<script src="{{ asset('front/js/jquery.stellar.min.js')}}"></script>
-		<!-- Final Countdown JS -->
-		<script src="{{ asset('front/js/finalcountdown.min.js')}}"></script>
-		<!-- Fancy Box JS-->
-		<script src="{{ asset('front/js/facnybox.min.js')}}"></script>
-		<!-- Magnific Popup JS-->
-		<script src="{{ asset('front/js/jquery.magnific-popup.min.js')}}"></script>
-		<!-- Circle Progress JS -->
-		<script src="{{ asset('front/js/circle-progress.min.js')}}"></script>
-		<!-- Nice Select JS -->
-		<script src="{{ asset('front/js/niceselect.js')}}"></script>
-		<!-- Jquery Steller JS-->
-        <script src="{{ asset('front/js/jquery.stellar.min.js')}}"></script>
-		<!-- Jquery Steller JS-->
-        <script src="{{ asset('front/js/cube-portfolio.min.js')}}"></script>
-		<!-- Slick Nav JS-->
-        <script src="{{ asset('front/js/slicknav.min.js')}}"></script>
-		<!-- Easing JS-->
-        <script src="{{ asset('front/js/easing.min.js')}}"></script>
-		<!-- Waypoints JS-->
-        <script src="{{ asset('front/js/waypoints.min.js')}}"></script>
-		<!-- Counter Up JS -->
-		<script src="{{ asset('front/js/jquery.counterup.min.js')}}"></script>
-		<!-- Scroll Up JS-->
-        <script src="{{ asset('front/js/jquery.scrollUp.min.js')}}"></script>
-		<!-- Gmaps JS-->
-		<script src="{{ asset('front/js/gmaps.min.js')}}"></script>
-		<!-- Main JS-->
-        <script src="{{ asset('front/js/main.js')}}"></script>
-    </body>
-</html>

@@ -1,46 +1,12 @@
 @extends('header')
 
 		<!--/ End Header -->
-        <header class="header">
-            <!-- Header Inner -->
-            <div class="header-inner overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <!-- Logo -->
-                            <div class="logo">
-                                <img src="{{ asset('front/image/said.png')}}" alt="#" width=90 px;>
-                            </div>
-                            <!--/ End Logo -->
-
-                        </div>
-                        <div class="col-lg-9 col-md-9 col-12">
-                            <div class="menu-bar">
-                                <nav class="navbar navbar-default">
-                                    <div class="navbar-collapse">
-                                        <!-- Main Menu -->
-                                        <ul id="nav" class="nav menu navbar-nav">
-                                            <li class="active"><a href="{{route('/')}}"><i class="fa fa-home"></i>Acceuil</a></li>
-
-                                            <li><a href="{{route('login')}}"><i class="fa fa-address-book"></i>Connexion</a> </li>
-
-                                             <li><a href="{{ route('condidat') }}"><i class="fa fa-address-book"></i>Candidateur</a> </li>
-                                             <li><a href="{{ route('conge') }}"><i class="fa fa-address-book"></i>Cangé Académique</a> </li>
-
-                                        </ul>
-                                        <!-- End Main Menu -->
-                                    </div>
-                                </nav>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--/ End Header Inner -->
-        </header>
+       @section('header')
+       @extends('header_2')
+       @endsection
         <!-- <img src="{{asset('/condidats/11/5.png')}}" alt=""> -->
 		<!-- Breadcrumb -->
+        @section('body')
 		<div class="breadcrumbs overlay" style="background-image:url('images/breadcrumb-bg.jpg')">
 			<div class="container">
 				<div class="row">
@@ -180,7 +146,7 @@
                                                 <option value="Inscription en L1 (2 ème diplôme)">Inscription en L1 (2 ème diplôme)</option>
                                                 <option value="L3 (DUEA , ENS bac+3)">L3 (DUEA , ENS bac+3)</option>
                                                 <option value="M1 (L3, ENS bac+4, M1)">M1 (L3, ENS bac+4, M1)</option>
-                                                <option value="M2 (ENS bac+(, Ingénieur)">M2 (ENS bac+(, Ingénieur)</option>
+                                                <option value="M2 (ENS bac+(, Ingénieur)">M2 (ENS bac+5, Ingénieur)</option>
                                             </select>
 										</div>
 									</div>
@@ -201,74 +167,11 @@
 			</div>
 		</section>
 		<!--/ End Contact Us -->
+@endsection
 
-		<!-- Clients CSS -->
 
-		<!--/ End Clients CSS -->
+<footer>
+@extends('footer')
+</footer>
 
-		<!-- Footer -->
-		<footer class="footer section">
-			<!-- Footer Top -->
 
-			<!--/ End Footer Top -->
-			<!-- Footer Bottom -->
-			<div class="footer-bottom">
-				<div class="container">
-					<div class="row">
-						<div class="col-12">
-							<!-- Copyright -->
-							<div class="copyright">
-								<p>© Copyright Eduland 2019. Design & Development by <a href="http://themelamp.com">www.themelamp.com</a>, Theme Release By <a href="http://codeglim.com">www.codeglim.com</a></p>
-							</div>
-							<!--/ End Copyright -->
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--/ End Footer Bottom -->
-		</footer>
-		<!--/ End Footer -->
-
-		<!-- Jquery JS-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery-migrate.min.js"></script>
-		<!-- Colors JS-->
-        <script src="js/colors.js"></script>
-		<!-- Popper JS-->
-        <script src="js/popper.min.js"></script>
-		<!-- Bootstrap JS-->
-        <script src="js/bootstrap.min.js"></script>
-		<!-- Owl Carousel JS-->
-        <script src="js/owl.carousel.min.js"></script>
-		<!-- Jquery Steller JS -->
-		<script src="js/jquery.stellar.min.js"></script>
-		<!-- Final Countdown JS -->
-		<script src="js/finalcountdown.min.js"></script>
-		<!-- Fancy Box JS-->
-		<script src="js/facnybox.min.js"></script>
-		<!-- Magnific Popup JS-->
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<!-- Circle Progress JS -->
-		<script src="js/circle-progress.min.js"></script>
-		<!-- Nice Select JS -->
-		<script src="js/niceselect.js"></script>
-		<!-- Jquery Steller JS-->
-        <script src="js/jquery.stellar.min.js"></script>
-		<!-- Jquery Steller JS-->
-        <script src="js/cube-portfolio.min.js"></script>
-		<!-- Slick Nav JS-->
-        <script src="js/slicknav.min.js"></script>
-		<!-- Easing JS-->
-        <script src="js/easing.min.js"></script>
-		<!-- Waypoints JS-->
-        <script src="js/waypoints.min.js"></script>
-		<!-- Counter Up JS -->
-		<script src="js/jquery.counterup.min.js"></script>
-		<!-- Scroll Up JS-->
-        <script src="js/jquery.scrollUp.min.js"></script>
-		<!-- Gmaps JS-->
-		<script src="js/gmaps.min.js"></script>
-		<!-- Main JS-->
-        <script src="js/main.js"></script>
-    </body>
-</html>

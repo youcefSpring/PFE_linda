@@ -46,5 +46,8 @@
         <link rel="stylesheet" href="{{ asset('front/css/colors/color1.css')}}">
 
     </head>
+@yield('header')
+@yield('body')
+@yield('footer')
 
 
