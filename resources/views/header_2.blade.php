@@ -19,11 +19,11 @@
                                         <ul id="nav" class="nav menu navbar-nav">
                                             <li class="active"><a href="{{route('/')}}"><i class="fa fa-home"></i>Acceuil</a></li>
 
-                                            <li><a href="{{route('login')}}"><i class="fa fa-address-book"></i>Connexion</a> </li>
 
-                                             <li><a href="{{ route('condidat') }}"><i class="fa fa-address-book"></i>Candidateur</a> </li>
-                                             <li><a href="{{ route('conge') }}"><i class="fa fa-address-book"></i>Cangé Académique</a> </li>
 
+                                             <li><a href="{{ route('condidat') }}"><i class="fa fa-address-book"></i>Candidature aux études universitaires</a> </li>
+                                             <li><a href="{{ route('conge') }}"><i class="fa fa-address-book"></i>Congé Académique</a> </li>
+                                             <li><a href="{{route('login')}}"><i class="fa fa-sign-in"></i>Connexion</a> </li>
                                         </ul>
                                         <!-- End Main Menu -->
                                     </div>
@@ -36,3 +36,4 @@
             </div>
             <!--/ End Header Inner -->
         </header>
+

@@ -11,7 +11,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-12">
-						<h2>Demande Congé académique</h2>
+						<h2>Demande de congé académique</h2>
 					</div>
 					<!-- <div class="col-lg-6 col-md-6 col-12">
 						<ul class="bread-list">
@@ -60,7 +60,7 @@
 									<div class="col-lg-6 col-md-6 col-12">
                                     <label for="year">Année d'étude</label>
 										<div class="form-group">
-											<i class="fa fa-envelope"></i>
+											<i class="fa fa-file"></i>
 											<input name="year" type="text" placeholder="Année d'étude" required>
 										</div>
 									</div>
@@ -75,14 +75,14 @@
                                     <div class="col-lg-6 col-md-6 col-12">
                                     <label for="filiere">Filière</label>
 										<div class="form-group">
-											<i class="fa fa-phone"></i>
+											<i class="fa fa-file"></i>
 											<input name="filiere" type="text" placeholder="Filière" required>
 										</div>
 									</div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                     <label for="speciality">Spécilaité</label>
 										<div class="form-group">
-											<i class="fa fa-envelope"></i>
+											<i class="fa fa-file"></i>
 											<input name="speciality" type="text" placeholder="Spécilaité" required>
 										</div>
 									</div>
@@ -98,7 +98,7 @@
                                     <div class="col-lg-6 col-md-6 col-12">
                                     <label for="phone">Numéro de téléphone</label>
 										<div class="form-group">
-											<i class="fa fa-file"></i>
+											<i class="fa fa-phone"></i>
 											<input name="phone" type="number" placeholder="Numéro de téléphone" required>
 										</div>
 									</div>
@@ -158,7 +158,9 @@
 									</div>
 									<div class="col-12">
 										<div class="form-group">
+
 											<div class="button">
+
 												<button type="submit" class="btn primary">Envoyer</button>
 											</div>
 										</div>

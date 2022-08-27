@@ -7,11 +7,13 @@
         <!-- <img src="{{asset('/condidats/11/5.png')}}" alt=""> -->
 		<!-- Breadcrumb -->
         @section('body')
+
 		<div class="breadcrumbs overlay" style="background-image:url('images/breadcrumb-bg.jpg')">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4 col-md-12 col-4">
-						<h2>Conndidat</h2>
+					<div class="col-lg-12 col-md-12 col-12">
+						<h2>Candidature aux études universitaires en vue de
+l’obtention du diplôme de licence et master</h2>
 					</div>
 					<!-- <div class="col-lg-6 col-md-6 col-12">
 						<ul class="bread-list">
@@ -27,15 +29,7 @@
 		<!-- Contact Us -->
 		<section id="contact" class="contact section">
 			<div class="container">
-				<div class="row">
-					<!-- <div class="col-lg-6 offset-lg-3 col-12">
-						<div class="section-title bg">
-							<h2>Contact <span>Us</span></h2>
-							<p>Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy</p>
-							<div class="icon"><i class="fa fa-paper-plane"></i></div>
-						</div>
-					</div> -->
-				</div>
+
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-12">
 						<div class="form-head">
