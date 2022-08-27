@@ -24,8 +24,16 @@ l’obtention du diplôme de licence et master</h2>
 				</div>
 			</div>
 		</div>
-		<!--/ End Breadcrumb -->
 
+		<!--/ End Breadcrumb -->
+        @if(Session::has('success'))
+        <br><br>
+            <div class="row mr-2 ml-2">
+                    <button type="text" class="btn btn-lg btn-block btn-success mb-2"
+                            id="type-error">{{Session::get('success')}}
+                    </button>
+            </div>
+       @endif
 		<!-- Contact Us -->
 		<section id="contact" class="contact section">
 			<div class="container">

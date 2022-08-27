@@ -72,7 +72,8 @@ class CondidateController extends Controller
         $c_relevet = $r->c_relevet->getClientOriginalName();
         $path_relevet='/condidats/'.$condidat->id;
         $r->c_relevet->move(public_path($path_relevet),$c_relevet);
-        $condidat->f_voeux=$path_relevet.'/'. $c_relevet;
+        $condidat->c_relevet=$path_relevet.'/'. $c_relevet;
+        // return  $condidat->f_voeux;
 
         $autorisation = $r->autorisation->getClientOriginalName();
         $path_autorisation='/condidats/'.$condidat->id;
@@ -80,7 +81,9 @@ class CondidateController extends Controller
         $condidat->autorisation=$path_autorisation.'/'. $autorisation;
 
         $condidat->save();
-        return $r->r_bac->getClientOriginalName();
+        // return $r->r_bac->getClientOriginalName();
+        return redirect()->back()->with('success','votre demande a été enregistré avec succès');
+
     }
 
     /**

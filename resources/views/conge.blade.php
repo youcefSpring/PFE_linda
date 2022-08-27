@@ -23,24 +23,23 @@
 			</div>
 		</div>
 		<!--/ End Breadcrumb -->
-
+        @if(Session::has('success'))
+        <br><br>
+            <div class="row mr-2 ml-2">
+                    <button type="text" class="btn btn-lg btn-block btn-success mb-2"
+                            id="type-error">{{Session::get('success')}}
+                    </button>
+            </div>
+       @endif
 		<!-- Contact Us -->
 		<section id="contact" class="contact section">
 			<div class="container">
-				<div class="row">
-					<!-- <div class="col-lg-6 offset-lg-3 col-12">
-						<div class="section-title bg">
-							<h2>Contact <span>Us</span></h2>
-							<p>Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy</p>
-							<div class="icon"><i class="fa fa-paper-plane"></i></div>
-						</div>
-					</div> -->
-				</div>
+
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-12">
 						<div class="form-head">
 							<!-- Contact Form -->
-							<form class="form" action="{{ route('admin.storeCondidate')}}" enctype="multipart/form-data" method="POST">
+							<form class="form" action="{{ route('admin.storeLeave')}}" enctype="multipart/form-data" method="POST">
                                 @csrf
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-12">
@@ -107,7 +106,7 @@
                                     <label for="annee_univ">Année universitaire</label>
 										<div class="form-group">
 											<i class="fa fa-file"></i>
-											<input name="annee_univ" type="file" placeholder="Email" required>
+											<input name="annee_univ" type="text" placeholder="Année universitaire" required>
 										</div>
 									</div>
 

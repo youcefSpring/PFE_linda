@@ -10,7 +10,6 @@ use Mcamara\LaravelLocalization\LaravelLocalization;
 //     ], function(){
 
 // Route::resource('condidates', CondidateController::class);
-Route::post('store','Dashboard\CondidateController@store')->name('admin.storeCondidate');
 
 //prefix for all route admin
 Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'=>'admin'], function () {
