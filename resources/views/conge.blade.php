@@ -134,9 +134,9 @@
 									</div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                     <label for="raison">Raison de la demande du congé académique</label>
-										<div class="form-group">
+										<div class="form-group" id="s">
 
-											<select name="raison" id="raison" class="form-control">
+											<select name="raison" id="raison" class="form-control" onchange="yesnoCheck(this);">
                                                 <option value="">Sélectionnez type d'inscription</option>
                                                 <option value="Maladie chronique invalidante">Maladie chronique invalidante</option>
                                                 <option value="Maternité">Maternité</option>
@@ -145,16 +145,17 @@
                                                 <option value="Obligations familiales relatives aux ascendants et/ou descendants, déplacement duconjoint, ou des parents liés à la fonction, …).">
                                                     Obligations familiales relatives aux ascendants et/ou descendants, <br>
                                                      déplacement duconjoint, ou des parents liés à la fonction)</option>
+                                               <option value="autre">Autre ...</option>
                                             </select>
 										</div>
-									</div>
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                    <label for="another_raison">Autre raison</label>
+                                        <div id="ifYes" style="display:none;">
 										<div class="form-group">
 											<i class="fa fa-file"></i>
 											<input name="another_raison" type="text" placeholder="Autre raison">
 										</div>
 									</div>
+									</div>
+
 									<div class="col-12">
 										<div class="form-group">
 
@@ -173,6 +174,19 @@
 				</div>
 			</div>
 		</section>
+
+        <script>
+
+            function yesnoCheck(that) {
+    if (that.value == "autre") {
+
+        document.getElementById("ifYes").style.display = "block";
+        document.getElementById("s").style.display = "none";
+    } else {
+        document.getElementById("ifYes").style.display = "none";
+    }
+}
+        </script>
 		<!--/ End Contact Us -->
 @endsection
 
