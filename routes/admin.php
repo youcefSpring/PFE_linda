@@ -10,7 +10,9 @@ use Mcamara\LaravelLocalization\LaravelLocalization;
 //     ], function(){
 
 // Route::resource('condidates', CondidateController::class);
-
+Route::post('storeCondidate','Dashboard\CondidateController@store')->name('admin.storeCondidate');
+Route::post('storeLeave','Dashboard\LeaveController@store')->name('admin.storeLeave');
+Route::get('getfile/{folder}/{id}/{filename}', 'Dashboard\DashboardController@getFile')->name('admin.getfile');
 //prefix for all route admin
 Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'=>'admin'], function () {
     Route::get('/d', 'downloadPdf@generatePDF');
@@ -20,22 +22,41 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
 
 
 
-    Route::group(['prefix' => 'vendeur'], function () {
-        Route::get('/','VendorController@index')->name('admin.VendorList');
+    Route::group(['prefix' => 'leaves'], function () {
+        Route::get('/','LeaveController@index')->name('admin.LeaveList');
 
-        Route::get('create','VendorController@create')->name('admin.VendorCreate');
+        Route::get('create','LeaveController@create')->name('admin.LeaveCreate');
 
-        Route::post('store','VendorController@store')->name('admin.VendorStore');
+        Route::post('store','LeaveController@store')->name('admin.LeaveStore');
 
-        Route::get('edit/{id}','VendorController@edit')->name('admin.VendorEdit');
+        Route::get('edit/{id}','LeaveController@edit')->name('admin.LeaveEdit');
 
-        Route::post('update/{id}','VendorController@update')->name('admin.VendorUpdate');
+        Route::post('update/{id}','LeaveController@update')->name('admin.LeaveUpdate');
 
-        Route::get('delete/{id}','VendorController@delete')->name('admin.VendorDelete');
+        Route::get('delete/{id}','LeaveController@delete')->name('admin.LeaveDelete');
 
-        Route::get('changeStatus','VendorController@changeStatus')->name('admin.VendorChangeStatus');
+        Route::get('changeStatus','LeaveController@changeStatus')->name('admin.LeaveChangeStatus');
 
-        Route::get('/live_search/action', 'VendorController@action')->name('live_search.action');
+        Route::get('/live_search/action', 'Dashboard\LeaveController@action')->name('live_search.action');
+
+
+    });
+    Route::group(['prefix' => 'condidates'], function () {
+        Route::get('/','CondidateController@index')->name('admin.CondidateList');
+
+        Route::get('create','CondidateController@create')->name('admin.CondidateCreate');
+
+        Route::post('store','CondidateController@store')->name('admin.CondidateStore');
+
+        Route::get('edit/{id}','CondidateController@edit')->name('admin.CondidateEdit');
+
+        Route::post('update/{id}','CondidateController@update')->name('admin.CondidateUpdate');
+
+        Route::get('delete/{id}','CondidateController@delete')->name('admin.CondidateDelete');
+
+        Route::get('changeStatus','CondidateController@changeStatus')->name('admin.CondidateChangeStatus');
+
+        Route::get('/live_search/action', 'Dashboard\LeaveController@action')->name('live_search.action');
 
 
     });

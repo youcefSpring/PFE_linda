@@ -13,10 +13,11 @@ class CondidateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+    public function index(){
+        $items=Condidate::all();
+        // return $items;
+        return view('Dashboard.condidates.index',compact('items'));
+      }
 
     /**
      * Show the form for creating a new resource.
@@ -49,34 +50,34 @@ class CondidateController extends Controller
         $condidat->save();
 
         $l_motivation = $r->l_motivation->getClientOriginalName();
-        $path_l='/condidats/'.$condidat->id;
+        $path_l='condidats/'.$condidat->id;
         $r->l_motivation->move(public_path($path_l),$l_motivation);
         $condidat->l_motivation=$path_l.'/'. $l_motivation;
 
         $f_voeux = $r->f_voeux->getClientOriginalName();
-        $path_f='/condidats/'.$condidat->id;
+        $path_f='condidats/'.$condidat->id;
         $r->f_voeux->move(public_path($path_f),$f_voeux);
         $condidat->f_voeux=$path_f.'/'. $f_voeux;
 
 
         $r_bac = $r->r_bac->getClientOriginalName();
-        $path_r='/condidats/'.$condidat->id;
+        $path_r='condidats/'.$condidat->id;
         $r->r_bac->move(public_path($path_r),$r_bac);
         $condidat->r_bac=$path_r.'/'. $r_bac;
 
         $c_diplome = $r->c_diplome->getClientOriginalName();
-        $path_c='/condidats/'.$condidat->id;
+        $path_c='condidats/'.$condidat->id;
         $r->c_diplome->move(public_path($path_c),$c_diplome);
         $condidat->c_diplome=$path_c.'/'. $c_diplome;
 
         $c_relevet = $r->c_relevet->getClientOriginalName();
-        $path_relevet='/condidats/'.$condidat->id;
+        $path_relevet='condidats/'.$condidat->id;
         $r->c_relevet->move(public_path($path_relevet),$c_relevet);
         $condidat->c_relevet=$path_relevet.'/'. $c_relevet;
         // return  $condidat->f_voeux;
 
         $autorisation = $r->autorisation->getClientOriginalName();
-        $path_autorisation='/condidats/'.$condidat->id;
+        $path_autorisation='condidats/'.$condidat->id;
         $r->autorisation->move(public_path($path_autorisation),$autorisation);
         $condidat->autorisation=$path_autorisation.'/'. $autorisation;
 

@@ -37,8 +37,8 @@
 
                                             <div class="form-body">
 
-                                                <h4 class="form-section"><i class="ft-home"></i>Les information du Admin
-                                                </h4>
+                                                <!-- <h4 class="form-section"><i class="ft-home"></i>Les information du Admin
+                                                </h4> -->
 
 
                                                 <div class="row">

@@ -8,80 +8,60 @@
 
 
             <li class="nav-item"><a href=""><i class="la la-barcode"></i>
-                <span class="menu-title" data-i18n="nav.dash.main"> Les Produits</span>
-                <span {{-- class="badge badge badge-success badge-pill float-right mr-2">{{ \App\Models\Admin::count() }}</span> --}} </a>
+                <span class="menu-title" data-i18n="nav.dash.main">Congés académiques</span>
+                <span >
                     <ul class="menu-content">
                         <li >
 
-                            <a class="menu-item" href="{{ url('admin/product/list') }}" data-i18n="nav.dash.ecommerce">
+                            <a class="menu-item" href="{{ route('admin.LeaveList') }}" data-i18n="nav.dash.ecommerce">
                                 La Liste</a>
                         </li>
 
 
                     </ul>
         </li>
-        <li class="nav-item"><a href=""><i class="la la-user-secret"></i>
-            <span class="menu-title" data-i18n="nav.dash.main"> Les Ventes</span>
+        <li class="nav-item"><a href=""><i class="la la-users"></i>
+            <span class="menu-title" data-i18n="nav.dash.main">Condidateurs études</span>
             <span {{-- class="badge badge badge-success badge-pill float-right mr-2">{{ \App\Models\Admin::count() }}</span> --}} </a>
                 <ul class="menu-content">
                     <li >
 
-                        <a class="menu-item" href="{{ route('admin.SaleList')}}" data-i18n="nav.dash.ecommerce">
+                        <a class="menu-item" href="{{ route('admin.CondidateList')}}" data-i18n="nav.dash.ecommerce">
                             La Liste</a>
                     </li>
 
 
                 </ul>
     </li>
-            <li class="nav-item"><a href=""><i class="la la-group"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main"> Les Vendeurs</span>
-                    <span {{-- class="badge badge badge-success badge-pill float-right mr-2">{{ \App\Models\Admin::count() }}</span> --}} </a>
-                        <ul class="menu-content">
-                            <li >
 
-                                <a class="menu-item" href="{{ url('admin/vendeur/') }}" data-i18n="nav.dash.ecommerce">
-                                    La Liste</a>
-                            </li>
-                            <li>
-                                <a class="menu-item" href="{{ url('admin/vendeur/create/') }}" data-i18n="nav.dash.crypto">
-                                    Ajouter </a>
-                            </li>
-                            {{-- <li>
-                                <a class="menu-item" href="{{ route('importEmployeeExcel') }}" data-i18n="nav.dash.crypto">
-                                    Importer Excel </a>
-                            </li> --}}
-                        </ul>
-            </li>
-            <li class="nav-item"><a href=""><i class="la la-users"></i>
-                <span class="menu-title" data-i18n="nav.dash.main"> Les Gérants de stock</span>
+    <li class="nav-item"><a href=""><i class="la la-file"></i>
+                <span class="menu-title" data-i18n="nav.dash.main"> Fiche de voeux</span>
                 <span {{-- class="badge badge badge-success badge-pill float-right mr-2">{{ \App\Models\Admin::count() }}</span> --}} </a>
                     <ul class="menu-content">
                         <li >
-                            <a class="menu-item" href="{{ route('admin.StoreManagerList') }}" data-i18n="nav.dash.ecommerce">
+                            <a class="menu-item" href="" data-i18n="nav.dash.ecommerce">
+                                Modifer</a>
+                        </li>
+
+
+                    </ul>
+        </li>
+            <li class="nav-item"><a href=""><i class="la la-users"></i>
+                <span class="menu-title" data-i18n="nav.dash.main"> Les utilisateurs</span>
+                <span {{-- class="badge badge badge-success badge-pill float-right mr-2">{{ \App\Models\Admin::count() }}</span> --}} </a>
+                    <ul class="menu-content">
+                        <li >
+                            <a class="menu-item" href="" data-i18n="nav.dash.ecommerce">
                                 La Liste </a>
                         </li>
                         <li>
-                            <a class="menu-item" href="{{ route('admin.StoreManagerCreate') }}" data-i18n="nav.dash.crypto">
+                            <a class="menu-item" href="" data-i18n="nav.dash.crypto">
                                 Ajouter </a>
                         </li>
-                        {{-- <li>
-                            <a class="menu-item" href="{{ route('importEmployeeExcel') }}" data-i18n="nav.dash.crypto">
-                                Importer Excel </a>
-                        </li> --}}
+
                     </ul>
         </li>
-        <li class="nav-item"><a href=""><i class="la la-user-secret"></i>
-            <span class="menu-title" data-i18n="nav.dash.main"> Les Fournisseurs</span>
-            <span {{-- class="badge badge badge-success badge-pill float-right mr-2">{{ \App\Models\Admin::count() }}</span> --}} </a>
-                <ul class="menu-content">
-                    <li >
-
-                        <a class="menu-item" href="{{ url('admin/providers/list')}}" data-i18n="nav.dash.ecommerce">
-                            La Liste</a>
-                    </li>
 
 
-                </ul>
-    </li>
     </div>
 </div>

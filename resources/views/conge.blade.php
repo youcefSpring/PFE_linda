@@ -134,6 +134,8 @@
 									</div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                     <label for="raison">Raison de la demande du congé académique</label>
+                                    <br>
+                                    <!-- (<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> Autre ) -->
 										<div class="form-group" id="s">
 
 											<select name="raison" id="raison" class="form-control" onchange="yesnoCheck(this);">

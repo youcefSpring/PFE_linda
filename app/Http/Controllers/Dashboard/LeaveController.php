@@ -28,24 +28,30 @@ class LeaveController extends Controller
         $condidat->save();
 
         $c_etudiant = $r->c_etudiant->getClientOriginalName();
-        $path_l='/congés/'.$condidat->id;
+        $path_l='congés/'.$condidat->id;
         $r->c_etudiant->move(public_path($path_l),$c_etudiant);
         $condidat->c_etudiant=$path_l.'/'. $c_etudiant;
 
         $c_inscription = $r->c_inscription->getClientOriginalName();
-        $path_f='/congés/'.$condidat->id;
+        $path_f='congés/'.$condidat->id;
         $r->c_inscription->move(public_path($path_f),$c_inscription);
         $condidat->c_inscription=$path_f.'/'. $c_inscription;
 
 
         $p_justificative = $r->p_justificative->getClientOriginalName();
-        $path_r='/congés/'.$condidat->id;
+        $path_r='congés/'.$condidat->id;
         $r->p_justificative->move(public_path($p_justificative),$p_justificative);
         $condidat->p_justificative=$path_r.'/'. $p_justificative;
 
 
         $condidat->save();
         return redirect()->back()->with('success','votre demande a été enregistré avec succès');
+    }
+
+    public function index(){
+      $items=Leave::all();
+    //   return $items;
+      return view('Dashboard.leaves.index',compact('items'));
     }
 
 }

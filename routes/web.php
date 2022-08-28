@@ -16,8 +16,6 @@ Route::get('/c', function() {
 });
 
 
-Route::post('store','Dashboard\CondidateController@store')->name('admin.storeCondidate');
-Route::post('store','Dashboard\LeaveController@store')->name('admin.storeLeave');
 
 
 
