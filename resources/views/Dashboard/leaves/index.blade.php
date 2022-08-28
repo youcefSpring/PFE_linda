@@ -122,7 +122,12 @@
                                             {{ $i->status }}
                                           </th>
                                           <th>
-                                            /
+                                          <a href="{{route('admin.LeaveChangeStatus',[$i->id,'Accepté'])}}" class="btn btn-success">
+                                               <i class="la la-save"></i> Accepté
+                                            </a>
+                                            <a href="{{route('admin.LeaveChangeStatus',[$i->id,'Refusé'])}}" class="btn btn-danger">
+                                            <i class="la la-trash"></i> Refusé
+                                            </a>
                                           </th>
                                           </tr>
                                       @endforeach

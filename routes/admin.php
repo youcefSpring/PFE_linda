@@ -35,7 +35,7 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
 
         Route::get('delete/{id}','LeaveController@delete')->name('admin.LeaveDelete');
 
-        Route::get('changeStatus','LeaveController@changeStatus')->name('admin.LeaveChangeStatus');
+        Route::get('changeStatus/{id}/{status}','LeaveController@changeStatus')->name('admin.LeaveChangeStatus');
 
         Route::get('/live_search/action', 'Dashboard\LeaveController@action')->name('live_search.action');
 
@@ -54,7 +54,7 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
 
         Route::get('delete/{id}','CondidateController@delete')->name('admin.CondidateDelete');
 
-        Route::get('changeStatus','CondidateController@changeStatus')->name('admin.CondidateChangeStatus');
+        Route::get('changeStatus/{id}/{status}','CondidateController@changeStatus')->name('admin.CondidateChangeStatus');
 
         Route::get('/live_search/action', 'Dashboard\LeaveController@action')->name('live_search.action');
 

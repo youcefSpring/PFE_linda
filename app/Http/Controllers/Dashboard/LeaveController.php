@@ -54,4 +54,14 @@ class LeaveController extends Controller
       return view('Dashboard.leaves.index',compact('items'));
     }
 
+
+    public function changeStatus($id,$status)
+    {
+        $c=Leave::find($id);
+       $c->status=$status;
+       $c->save();
+
+       return back()->with('success','Mise à jour avec succès');
+    }
+
 }
