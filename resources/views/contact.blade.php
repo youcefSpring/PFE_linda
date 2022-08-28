@@ -40,10 +40,16 @@ l’obtention du diplôme de licence et master</h2>
                             <div class="col-md-4">
                             @php
                                  $i=\App\Models\Fichier::latest()->first();
-                                             $ls=explode("/",$i->path)
+                                 if(isset($i)){
+                                    $ls=explode("/",$i->path);
+                                 }
+
+
                                          @endphp
+                                @if(isset($i))
                                            <a href="{{ route('admin.getfile', [$ls[0],$ls[1],$ls[2]] ) }}">
                                              <i class="fa fa-download"></i>Télécharger fiche de voeux</a>
+                                @endif
                             </div>
                             <div class="col-md-4"></div>
                             </div>
