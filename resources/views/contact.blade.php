@@ -36,7 +36,7 @@ l’obtention du diplôme de licence et master</h2>
        @endif
        <center>
             <div class="row">
-                            <div class="col-md-4"></div>
+                            <div class="col-md-0"></div>
                             <div class="col-md-4">
                             @php
                                  $i=\App\Models\Fichier::latest()->first();

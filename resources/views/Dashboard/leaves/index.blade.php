@@ -1,14 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<style>
-    #search{
-        float: right;
-        width: 400px;
-        margin: 10px;
-    }
-</style>
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">
@@ -42,7 +34,7 @@
                                 <div class="form-group">
 
                                    </div>
-                                <table class="table table-de mb-0 " id="seancetab" border="2" cellpadding="3">
+                                <table class="table table-de mb-0 " id="table_id" border="2" cellpadding="3">
                                 <thead class="thead-dark">
                                     <tr>
                                         <th>Nom</th>
@@ -132,6 +124,7 @@
                                           </tr>
                                       @endforeach
                                     </tbody>
+
                                 </table>
 
                             </div>
