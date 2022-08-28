@@ -1,1 +1,1 @@
-pharmacy system using laravel 7
+pedagogic online system using laravel 7
