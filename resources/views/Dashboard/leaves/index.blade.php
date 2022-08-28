@@ -144,33 +144,5 @@
         </div>
 
 </div>
-
-<!-- <script>
-    $(document).ready(function(){
-
-     fetch_customer_data();
-
-     function fetch_customer_data(query = '')
-     {
-      $.ajax({
-       url:"{{ route('admin.ProductSearch') }}",
-       method:'GET',
-       data:{query:query},
-       dataType:'json',
-       success:function(data)
-       {
-        $('tbody').html(data.table_data);
-        // console.log(1);
-        // $('#total_records').text(data.total_data);
-       }
-      })
-     }
-
-     $(document).on('keyup', '#search', function(){
-      var query = $(this).val();
-      fetch_customer_data(query);
-     });
-    });
-</script> -->
 @endsection
 

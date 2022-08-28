@@ -61,43 +61,7 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
 
     });
 
-    Route::group(['prefix' => 'stock'], function () {
-        Route::get('/','StoreManagerController@index')->name('admin.StoreManagerList');
 
-        Route::get('create','StoreManagerController@create')->name('admin.StoreManagerCreate');
-
-        Route::post('store','StoreManagerController@store')->name('admin.StoreManagerStore');
-
-        Route::get('edit/{id}','StoreManagerController@edit')->name('admin.StoreManagerEdit');
-
-        Route::post('update/{id}','StoreManagerController@update')->name('admin.StoreManagerUpdate');
-
-        Route::get('delete/{id}','StoreManagerController@delete')->name('admin.StoreManagerDelete');
-
-        Route::get('changeStatus','StoreManagerController@changeStatus')->name('admin.StoreManagerChangeStatus');
-
-        Route::get('/live_search/action', 'StoreManagerController@action')->name('admin.searchStoreManager');
-
-
-    });
-
-    Route::group(['prefix' => 'product'], function () {
-        Route::view('/list','Dashboard.Products.index')->name('admin.ProductList');
-        Route::get('/live_search', 'ProductController@list')->name('admin.ProductSearch');
-
-    });
-    Route::group(['prefix' => 'sales'], function () {
-
-        Route::get('/list', 'SaleController@list')->name('admin.SaleList');
-        Route::get('/detail/{id}', 'SaleController@detail')->name('admin.SaleDetail');
-
-
-    });
-    Route::group(['prefix' => 'providers'], function () {
-        Route::view('/list','Dashboard.Providers.index')->name('admin.ProviderList');
-        Route::get('/live_search', 'ProviderController@list')->name('admin.ProviderSearch');
-
-    });
     Route::group(['prefix' => 'fichier'], function () {
         Route::get('/import', 'DashboardController@importFicheVoeux')->name('importFicheVoeux');
         Route::post('/stock', 'DashboardController@stockerFichVoeux')->name('stockerFichVoeux');
@@ -108,8 +72,7 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
         Route::put('update','ProfileController@updateProfile')->name('admin.updateProfile');
 
     });
-    ##################### end Categories Routes ##########################
-    Route::resource('ajaxItems','EmployeeController');
+
 
 
 });
