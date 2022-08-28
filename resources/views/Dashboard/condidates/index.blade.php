@@ -96,19 +96,39 @@
                                              <!-- <img src="{{asset($i->l_motivation)}}" alt="" style="witdh:80px; height: 80px;"> -->
                                           </th>
                                           <th>
-                                            {{ $i->f_voeux }}
+                                            @php
+                                             $ls=explode("/",$i->f_voeux)
+                                         @endphp
+                                           <a href="{{ route('admin.getfile', [$ls[0],$ls[1],$ls[2]] ) }}">
+                                             <i class="la la-download"></i>Télécharger</a>
                                           </th>
                                           <th>
-                                            {{ $i->r_bac }}
+                                            @php
+                                             $ls=explode("/",$i->r_bac)
+                                         @endphp
+                                           <a href="{{ route('admin.getfile', [$ls[0],$ls[1],$ls[2]] ) }}">
+                                             <i class="la la-download"></i>Télécharger</a>
                                           </th>
                                           <th>
-                                            {{ $i->c_diplome }}
+                                            @php
+                                             $ls=explode("/",$i->c_diplome)
+                                         @endphp
+                                           <a href="{{ route('admin.getfile', [$ls[0],$ls[1],$ls[2]] ) }}">
+                                             <i class="la la-download"></i>Télécharger</a>
                                           </th>
                                           <th>
-                                            {{ $i->c_relevet }}
+                                            @php
+                                             $ls=explode("/",$i->c_relevet)
+                                         @endphp
+                                           <a href="{{ route('admin.getfile', [$ls[0],$ls[1],$ls[2]] ) }}">
+                                             <i class="la la-download"></i>Télécharger</a>
                                           </th>
                                           <th>
-                                            {{ $i->autorisation }}
+                                            @php
+                                             $ls=explode("/",$i->autorisation)
+                                         @endphp
+                                           <a href="{{ route('admin.getfile', [$ls[0],$ls[1],$ls[2]] ) }}">
+                                             <i class="la la-download"></i>Télécharger</a>
                                           </th>
                                           <th>
                                             {{ $i->type_inscription }}

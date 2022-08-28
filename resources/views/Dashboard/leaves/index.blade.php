@@ -66,6 +66,7 @@
                                     </thead>
                                     <tbody>
                                       @foreach ($items as $i )
+                                      <tr>
                                           <th>
                                             {{ $i->name }}
                                           </th>
@@ -94,13 +95,25 @@
                                             {{ $i->annee_univ }}
                                           </th>
                                           <th>
-                                            {{ $i->c_etudiant }}
+                                            @php
+                                             $ls=explode("/",$i->c_etudiant)
+                                         @endphp
+                                           <a href="{{ route('admin.getfile', [$ls[0],$ls[1],$ls[2]] ) }}">
+                                             <i class="la la-download"></i>Télécharger</a>
                                           </th>
                                           <th>
-                                            {{ $i->c_inscription }}
+                                            @php
+                                             $ls=explode("/",$i->c_inscription)
+                                         @endphp
+                                           <a href="{{ route('admin.getfile', [$ls[0],$ls[1],$ls[2]] ) }}">
+                                             <i class="la la-download"></i>Télécharger</a>
                                           </th>
                                           <th>
-                                            {{ $i->p_justificative }}
+                                            @php
+                                             $ls=explode("/",$i->p_justificative)
+                                         @endphp
+                                           <a href="{{ route('admin.getfile', [$ls[0],$ls[1],$ls[2]] ) }}">
+                                             <i class="la la-download"></i>Télécharger</a>
                                           </th>
                                           <th>
                                             {{ $i->raison }}
@@ -111,6 +124,7 @@
                                           <th>
                                             /
                                           </th>
+                                          </tr>
                                       @endforeach
                                     </tbody>
                                 </table>

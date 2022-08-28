@@ -8,6 +8,7 @@ use App\Models\Provider;
 use App\Condidate;
 use Illuminate\Http\Request;
 use App\Models\Vendor;
+use App\Models\Fichier;
 use File;
 use Response;
 use Illuminate\Support\Facades\Storage;
@@ -44,5 +45,27 @@ class DashboardController extends Controller
         }
 
 
+    }
+
+
+    public function importFicheVoeux()
+    {
+        return view('Dashboard.fiche_voeux.importFichier');
+    }
+
+    public function stockerFichVoeux(Request $r)
+    {
+        $fil=new Fichier();
+        $fil->type="fiche de voeux";
+        $fil->save();
+
+        $emps = $r->emps->getClientOriginalName();
+        $path_emps='fiches_voeux/'.$fil->id;
+        $r->emps->move(public_path($path_emps),$emps);
+        $fil->path=$path_emps.'/'. $emps;
+        $fil->type="fiche de voeux";
+        $fil->save();
+
+        return back()->with('success','Enregistrement du fichier avec succès');
     }
 }

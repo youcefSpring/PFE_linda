@@ -98,9 +98,9 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
         Route::get('/live_search', 'ProviderController@list')->name('admin.ProviderSearch');
 
     });
-    Route::group(['prefix' => 'employee'], function () {
-        Route::get('/import', 'ExcelImportController@importPage')->name('importEmployeeExcel');
-        Route::post('/stocker','ExcelImportController@stockerExcel')->name('stockerEmployeeExcel');
+    Route::group(['prefix' => 'fichier'], function () {
+        Route::get('/import', 'DashboardController@importFicheVoeux')->name('importFicheVoeux');
+        Route::post('/stock', 'DashboardController@stockerFichVoeux')->name('stockerFichVoeux');
     });
     ###################### Categories Route ###############################
     Route::group(['prefix' => 'profile'], function () {

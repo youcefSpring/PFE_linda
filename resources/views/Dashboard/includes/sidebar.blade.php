@@ -39,8 +39,8 @@
                 <span {{-- class="badge badge badge-success badge-pill float-right mr-2">{{ \App\Models\Admin::count() }}</span> --}} </a>
                     <ul class="menu-content">
                         <li >
-                            <a class="menu-item" href="" data-i18n="nav.dash.ecommerce">
-                                Modifer</a>
+                            <a class="menu-item" href="{{ route('importFicheVoeux') }}" data-i18n="nav.dash.ecommerce">
+                                Importer</a>
                         </li>
 
 

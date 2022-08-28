@@ -34,14 +34,29 @@ l’obtention du diplôme de licence et master</h2>
                     </button>
             </div>
        @endif
+       <center>
+            <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                            @php
+                                 $i=\App\Models\Fichier::latest()->first();
+                                             $ls=explode("/",$i->path)
+                                         @endphp
+                                           <a href="{{ route('admin.getfile', [$ls[0],$ls[1],$ls[2]] ) }}">
+                                             <i class="fa fa-download"></i>Télécharger fiche de voeux</a>
+                            </div>
+                            <div class="col-md-4"></div>
+                            </div>
+            </center>
 		<!-- Contact Us -->
 		<section id="contact" class="contact section">
+
 			<div class="container">
 
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-12">
 						<div class="form-head">
-							<!-- Contact Form -->
+
 							<form class="form" action="{{ route('admin.storeCondidate')}}" enctype="multipart/form-data" method="POST">
                                 @csrf
 								<div class="row">
