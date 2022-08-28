@@ -21,6 +21,23 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
     Route::get('/logout','LoginController@logout')->name('admin.logout');
 
 
+    Route::group(['prefix' => 'users'], function () {
+        Route::get('/','UserController@index')->name('admin.UserList');
+
+        Route::get('create','UserController@create')->name('admin.UserCreate');
+
+        Route::post('store','LeaveController@store')->name('admin.UserStore');
+
+        Route::get('edit/{id}','UserController@edit')->name('admin.UserEdit');
+
+        Route::post('update/{id}','UserController@update')->name('admin.UserUpdate');
+
+        Route::get('delete/{id}','UserController@delete')->name('admin.UserDelete');
+
+        Route::get('changeStatus/{id}/{status}','UserController@changeStatus')->name('admin.UserChangeStatus');
+
+        Route::get('/live_search/action', 'Dashboard\UserController@action')->name('live_search.action');
+    });
 
     Route::group(['prefix' => 'leaves'], function () {
         Route::get('/','LeaveController@index')->name('admin.LeaveList');
@@ -38,8 +55,6 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
         Route::get('changeStatus/{id}/{status}','LeaveController@changeStatus')->name('admin.LeaveChangeStatus');
 
         Route::get('/live_search/action', 'Dashboard\LeaveController@action')->name('live_search.action');
-
-
     });
     Route::group(['prefix' => 'condidates'], function () {
         Route::get('/','CondidateController@index')->name('admin.CondidateList');

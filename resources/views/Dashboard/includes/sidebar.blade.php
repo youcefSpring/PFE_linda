@@ -51,13 +51,13 @@
                 <span {{-- class="badge badge badge-success badge-pill float-right mr-2">{{ \App\Models\Admin::count() }}</span> --}} </a>
                     <ul class="menu-content">
                         <li >
-                            <a class="menu-item" href="" data-i18n="nav.dash.ecommerce">
+                            <a class="menu-item" href="{{ route('admin.UserList') }}" data-i18n="nav.dash.ecommerce">
                                 La Liste </a>
                         </li>
-                        <li>
-                            <a class="menu-item" href="" data-i18n="nav.dash.crypto">
+                        <!-- <li>
+                            <a class="menu-item" href="{{ route('admin.UserCreate') }}" data-i18n="nav.dash.crypto">
                                 Ajouter </a>
-                        </li>
+                        </li> -->
 
                     </ul>
         </li>
