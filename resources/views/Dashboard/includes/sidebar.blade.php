@@ -46,6 +46,7 @@
 
                     </ul>
         </li>
+        @if(auth()->user()->user_type=="Admin")
             <li class="nav-item"><a href=""><i class="la la-users"></i>
                 <span class="menu-title" data-i18n="nav.dash.main"> Les utilisateurs</span>
                 <span {{-- class="badge badge badge-success badge-pill float-right mr-2">{{ \App\Models\Admin::count() }}</span> --}} </a>
@@ -60,8 +61,8 @@
                         </li> -->
 
                     </ul>
-        </li>
-
+            </li>
+         @endif
 
     </div>
 </div>

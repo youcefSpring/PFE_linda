@@ -26,7 +26,7 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
 
         Route::get('create','UserController@create')->name('admin.UserCreate');
 
-        Route::post('store','LeaveController@store')->name('admin.UserStore');
+        Route::post('store','UserController@store')->name('admin.UserStore');
 
         Route::get('edit/{id}','UserController@edit')->name('admin.UserEdit');
 

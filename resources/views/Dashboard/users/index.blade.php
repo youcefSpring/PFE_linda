@@ -90,7 +90,7 @@
         </button>
       </div>
       <div class="modal-body">
-      <form class="form" action="{{ route('/')}}"
+      <form class="form" action="{{ route('admin.UserUpdate',$i->id)}}"
                                           method="POST"
                                           enctype="multipart/form-data">
                                         @csrf
@@ -118,7 +118,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="projectinput1">   Rôle </label>
-                                                        <input type="email" value="{{ $i->user_type }}" id="user_type"
+                                                        <input type="text" value="{{ $i->user_type }}" id="user_type"
                                                                class="form-control"
                                                                placeholder="Rôle d'utilisateur"
                                                                name="user_type"
@@ -199,7 +199,7 @@
         </button>
       </div>
       <div class="modal-body">
-      <form class="form" action="{{ route('/')}}"
+      <form class="form" action="{{ route('admin.UserStore')}}"
                                           method="POST"
                                           enctype="multipart/form-data">
                                         @csrf
@@ -227,7 +227,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="projectinput1">   Rôle </label>
-                                                        <input type="email" value="{{ old('user_type') }}" id="user_type"
+                                                        <input type="text" value="{{ old('user_type') }}" id="user_type"
                                                                class="form-control"
                                                                placeholder="Rôle d'utilisateur"
                                                                name="user_type"
