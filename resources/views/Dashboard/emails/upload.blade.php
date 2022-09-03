@@ -1,3 +1,12 @@
-<p>Salam,</p>
-<p>Veuillez télécharger le fichier joint</p>
-<p>Merci</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>University of Boumerdes</title>
+</head>
+<body>
+    <h1>{{ $details['title'] }}</h1>
+    <p>{!! $details['body'] !!}</p>
+
+    <p>Thank you</p>
+</body>
+</html>
