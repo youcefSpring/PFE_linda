@@ -25,6 +25,7 @@ return [
     'cipher' => 'AES-256-CBC',
 
     'providers' => [
+        niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
 
         Yajra\DataTables\DataTablesServiceProvider::class,
@@ -73,7 +74,6 @@ return [
 
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
-
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,

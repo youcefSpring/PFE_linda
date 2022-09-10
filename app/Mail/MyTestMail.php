@@ -21,6 +21,7 @@ class MyTestMail extends Mailable
     public function __construct($details)
     {
         $this->details = $details;
+
     }
 
     /**
@@ -34,3 +35,4 @@ class MyTestMail extends Mailable
                     ->view('Dashboard.emails.upload');
     }
 }
+

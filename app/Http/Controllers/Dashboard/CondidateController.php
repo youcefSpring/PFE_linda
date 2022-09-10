@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Condidate;
+use PDF;
 
 class CondidateController extends Controller
 {
@@ -93,12 +94,22 @@ class CondidateController extends Controller
        $c->status=$status;
        $c->save();
 
-       $details = [
-        'title' => 'Etat demande études universitaire',
-        'body' => 'Salam, <br> Nous vous informons que votre demande a été '.$status
-    ];
+    $data["email"] = $c->email;
+    $data["title"] = 'Etat demande études universitaire';
+    $data["body"] ='Salam, <br> Nous vous informons que votre demande a été '.$status;
 
-    \Mail::to($c->email)->send(new \App\Mail\MyTestMail($details));
+    $pdf = \PDF::loadView('Dashboard.emails.confirm', $data);
+
+    \Mail::send('Dashboard.emails.upload', $data, function($message)use($data, $pdf) {
+        $message->to($data["email"], $data["email"])
+                ->subject($data["title"])
+                ->attachData($pdf->output(), "Etat demande études universitair.pdf");
+    });
+
+    // dd('sent');
        return back()->with('success','Mise à jour avec succès');
     }
+
+
+
 }

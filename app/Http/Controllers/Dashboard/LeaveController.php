@@ -61,13 +61,24 @@ class LeaveController extends Controller
        $c->status=$status;
        $c->save();
 
-       $details = [
-        'title' => 'Etat demande congé académique',
-        'body' => 'Salam, <br> Nous vous informons que votre demande du congé académique a été '.$status
-    ];
+    //    $details = [
+    //     'title' => 'Etat demande congé académique',
+    //     'body' => 'Salam, <br> Nous vous informons que votre demande du congé académique a été '.$status
+    // ];
 
-    \Mail::to($c->email)->send(new \App\Mail\MyTestMail($details));
+    // \Mail::to($c->email)->send(new \App\Mail\MyTestMail($details));
 
+    $data["email"] = $c->email;
+    $data["title"] = 'Etat demande congé académique';
+    $data["body"] ='Salam, <br> Nous vous informons que votre demande du congé académique a été '.$status;
+
+    $pdf = \PDF::loadView('Dashboard.emails.confirm', $data);
+
+    \Mail::send('Dashboard.emails.upload', $data, function($message)use($data, $pdf) {
+        $message->to($data["email"], $data["email"])
+                ->subject($data["title"])
+                ->attachData($pdf->output(), "Etat demande congé académique.pdf");
+    });
        return back()->with('success','Mise à jour avec succès');
     }
 
