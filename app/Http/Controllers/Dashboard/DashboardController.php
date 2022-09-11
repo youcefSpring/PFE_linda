@@ -7,8 +7,8 @@ use App\Models\Product;
 use App\Models\Provider;
 use App\Condidate;
 use Illuminate\Http\Request;
-use App\Models\Vendor;
-use App\Models\Fichier;
+use App\Models\Leave;
+use App\Models\Admin;
 use File;
 use Response;
 use Illuminate\Support\Facades\Storage;
@@ -23,11 +23,12 @@ class DashboardController extends Controller
     public function index()
     {
         $a=[
-         'nbrV' => 0,
-         'nbrP' => 0,
-         'nbrG'=> 0,
+         'nbr_condidat' => Condidate::count(),
+         'nbr_congé' => Leave::count(),
+         'nbr_users'=> Admin::count(),
          'products'=>0
         ];
+        // return $a;
         return view('Dashboard.indexAdmin')->with('a',$a);
     }
 
