@@ -205,8 +205,8 @@ l’obtention du diplôme de licence et master</h2>
 @endsection
 
 
-<footer>
+@section('footer')
 @extends('footer')
-</footer>
+@endSection
 
 

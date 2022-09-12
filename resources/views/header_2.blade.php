@@ -9,7 +9,7 @@
                                 <img src="{{ asset('front/image/said.png')}}" alt="#" width=90 px;>
                             </div>
                             <!--/ End Logo -->
-
+                            <div class="mobile-menu"></div>
                         </div>
                         <div class="col-lg-9 col-md-9 col-12">
                             <div class="menu-bar">

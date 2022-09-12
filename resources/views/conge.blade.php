@@ -192,3 +192,7 @@
 		<!--/ End Contact Us -->
 @endsection
 
+
+@section('footer')
+@extends('footer')
+@endSection

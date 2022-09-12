@@ -37,3 +37,7 @@
         <!--/ End Slider Area -->
 
 @endsection
+
+@section('footer')
+@extends('footer')
+@endSection
