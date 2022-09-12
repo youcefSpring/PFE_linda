@@ -98,7 +98,7 @@
                                                         onclick="history.back();">
                                                         <i class="la la-trash"></i> Annuler
                                                     </button>
-                                                    <button type="submit" class="btn btn-primary">
+                                                    <button type="submit" class="btn btn-info">
                                                         <i class="la la-save"></i> Enregistrer
                                                     </button>
                                                 </div>

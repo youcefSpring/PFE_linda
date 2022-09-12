@@ -13,7 +13,7 @@
                     <div class="col-md-10">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title" id="basic-layout-form"> Importer fiche de voeux</h4>
+                                <h4 class="card-title" id="basic-layout-form"> Importer Pv</h4>
                                 <a class="heading-elements-toggle"><i
                                         class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
@@ -29,7 +29,7 @@
                             @include('Dashboard.includes.alerts.errors')
                             <div class="card-content collapse show">
                                 <div class="card-body">
-                                    <form class="form" action="{{ route('stockerFichVoeux')}}"
+                                    <form class="form" action="{{ route('stockerPv')}}"
                                           method="POST"
                                           enctype="multipart/form-data">
                                         @csrf
@@ -46,7 +46,7 @@
 
                                                 <div class="col-md-8">
                                                     <div class="form-group">
-                                                        <label for="projectinput1">   Fichier  </label>
+                                                        <label for="projectinput1">   Fichier (Pv)  </label>
                                                         <input type="file" value="{{ old('emps') }}" id="emps"
                                                                class="form-control"
                                                                placeholder="emps"

@@ -9,6 +9,7 @@ use App\Condidate;
 use Illuminate\Http\Request;
 use App\Models\Leave;
 use App\Models\Admin;
+use App\Models\Fichier;
 use File;
 use Response;
 use Illuminate\Support\Facades\Storage;
@@ -68,5 +69,26 @@ class DashboardController extends Controller
         $fil->save();
 
         return back()->with('success','Enregistrement du fichier avec succès');
+    }
+
+    public function importPv()
+    {
+        return view('Dashboard.Pv.importFichier');
+    }
+
+    public function stockerPv(Request $r)
+    {
+        $fil=new Fichier();
+        $fil->type="Pv";
+        $fil->save();
+
+        $emps = $r->emps->getClientOriginalName();
+        $path_emps='Pv/'.$fil->id;
+        $r->emps->move(public_path($path_emps),$emps);
+        $fil->path=$path_emps.'/'. $emps;
+        $fil->type="Pv";
+        $fil->save();
+
+        return back()->with('success','Enregistrement du Pv avec succès');
     }
 }

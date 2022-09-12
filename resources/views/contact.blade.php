@@ -36,22 +36,34 @@ l’obtention du diplôme de licence et master</h2>
        @endif
        <center>
             <div class="row">
-                            <div class="col-md-0"></div>
-                            <div class="col-md-4">
+                            <!-- <div class="col-md-0"></div> -->
+
                             @php
-                                 $i=\App\Models\Fichier::latest()->first();
+                                 $i=\App\Models\Fichier::where('type','fiche de voeux')->latest()->first();
                                  if(isset($i)){
                                     $ls=explode("/",$i->path);
                                  }
 
+                                 $j=\App\Models\Fichier::where('type','Pv')->latest()->first();
+                                 if(isset($j)){
+                                    $lm=explode("/",$i->path);
+                                 }
 
-                                         @endphp
+                            @endphp
                                 @if(isset($i))
+                                <div class="col-md-4">
                                            <a href="{{ route('admin.getfile', [$ls[0],$ls[1],$ls[2]] ) }}">
                                              <i class="fa fa-download"></i>Télécharger fiche de voeux</a>
+                                </div>
                                 @endif
-                            </div>
-                            <div class="col-md-4"></div>
+                                @if(isset($j))
+                                <div class="col-md-4">
+                                           <a href="{{ route('admin.getfile', [$lm[0],$lm[1],$lm[2]] ) }}">
+                                             <i class="fa fa-download"></i>Télécharger Pv (résultat)</a>
+                                </div>
+                                @endif
+
+                            <!-- <div class="col-md-4"></div> -->
                             </div>
             </center>
 		<!-- Contact Us -->

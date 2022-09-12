@@ -77,11 +77,18 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
     });
 
 
+    ###################### Fiche de voeux Route ###############################
+    Route::group(['prefix' => 'pv'], function () {
+        Route::get('/import', 'DashboardController@importPv')->name('importPv');
+        Route::post('/stock', 'DashboardController@stockerPv')->name('stockerPv');
+    });
+
+    ###################### Fiche de voeux Route ###############################
     Route::group(['prefix' => 'fichier'], function () {
         Route::get('/import', 'DashboardController@importFicheVoeux')->name('importFicheVoeux');
         Route::post('/stock', 'DashboardController@stockerFichVoeux')->name('stockerFichVoeux');
     });
-    ###################### Categories Route ###############################
+    ###################### Profile Route ###############################
     Route::group(['prefix' => 'profile'], function () {
         Route::get('edit','ProfileController@editProfile')->name('admin.editProfile');
         Route::put('update','ProfileController@updateProfile')->name('admin.updateProfile');

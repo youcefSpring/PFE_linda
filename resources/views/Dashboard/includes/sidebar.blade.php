@@ -29,7 +29,11 @@
                         <a class="menu-item" href="{{ route('admin.CondidateList')}}" data-i18n="nav.dash.ecommerce">
                             La Liste</a>
                     </li>
+                    <li >
 
+                 <a class="menu-item" href="{{ route('importPv')}}" data-i18n="nav.dash.ecommerce">
+                     Importer Pv</a>
+                 </li>
 
                 </ul>
     </li>
