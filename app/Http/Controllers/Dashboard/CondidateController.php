@@ -55,6 +55,10 @@ class CondidateController extends Controller
      */
     public function store(Request $r)
     {
+        $r->validate([
+            'g-recaptcha-response' => 'required|captcha'
+        ]);
+
         $condidat= new Condidate();
         $condidat->name=$r->name;
         $condidat->nationality=$r->nationality;

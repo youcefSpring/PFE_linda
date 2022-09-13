@@ -13,6 +13,9 @@ class LeaveController extends Controller
 
     public function store(Request $r)
     {
+        $r->validate([
+            'g-recaptcha-response' => 'required|captcha'
+        ]);
         $condidat= new Leave();
         $condidat->name=$r->name;
         $condidat->matricule=$r->matricule;

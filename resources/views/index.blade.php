@@ -13,7 +13,7 @@
             <div class="slider-active">
                 <!-- Single Slider -->
                 <div class="single-slider overlay">
-                    <div class="slider-image" style="background-image:url('image/imgumbb.png')"></div>
+
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-7 col-md-10 col-12">
