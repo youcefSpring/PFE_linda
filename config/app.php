@@ -25,6 +25,7 @@ return [
     'cipher' => 'AES-256-CBC',
 
     'providers' => [
+        "Buzz\LaravelGoogleCaptcha\CaptchaServiceProvider",
         niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
 
@@ -70,6 +71,7 @@ return [
 
 
     'aliases' => [
+        'Captcha' =>"Buzz\LaravelGoogleCaptcha\CaptchaServiceProvider",
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,

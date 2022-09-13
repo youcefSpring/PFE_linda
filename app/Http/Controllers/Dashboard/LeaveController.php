@@ -48,8 +48,27 @@ class LeaveController extends Controller
         return redirect()->back()->with('success','votre demande a été enregistré avec succès');
     }
 
-    public function index(){
-      $items=Leave::all();
+    public function index(Request $request){
+        $search=$request->search ?? null;
+        if(isset($search)){
+            $items=Leave::where('name','like','%'.$search.'%')
+                        ->orWhere('matricule','like','%'.$search.'%')
+                        ->orWhere('year_study','like','%'.$search.'%')
+                        ->orWhere('domaine','like','%'.$search.'%')
+                        ->orWhere('filiere','like','%'.$search.'%')
+                        ->orWhere('speciality','like','%'.$search.'%')
+                        ->orWhere('email','like','%'.$search.'%')
+                        ->orWhere('annee_univ','like','%'.$search.'%')
+                        ->orWhere('raison','like','%'.$search.'%')
+                        ->orWhere('status','like','%'.$search.'%')
+                        ->get();
+
+                        // return $items;
+        }
+        else{
+            $items=Leave::all();
+        }
+
     //   return $items;
       return view('Dashboard.leaves.index',compact('items'));
     }

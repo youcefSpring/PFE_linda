@@ -185,6 +185,18 @@ l’obtention du diplôme de licence et master</h2>
                                             </select>
 										</div>
 									</div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                <label for="capatcha">Captcha</label>
+                <div class="captcha">
+                  <span>{!! app('captcha')->display() !!}</span>
+                  <!-- <button type="button" class="btn btn-success refresh-cpatcha"><i class="fa fa-refresh"></i></button> -->
+                </div>
+
+                @error('g-recaptcha-response')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+              </div>
+              <br>
 									<div class="col-12">
 										<div class="form-group">
 											<div class="button">

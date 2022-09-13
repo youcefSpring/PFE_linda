@@ -2,13 +2,7 @@
 
 @section('content')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<style>
-    #search{
-        float: right;
-        width: 400px;
-        margin: 10px;
-    }
-</style>
+
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">
@@ -38,6 +32,22 @@
                         @include('Dashboard.includes.alerts.success')
                         @include('Dashboard.includes.alerts.errors')
                         <div class="center card-content">
+                        <div class="row">
+                          <div class="col-md-6"></div>
+                        <div class="col-md-6 text-right">
+                            <form action="{{ route('admin.CondidateList') }}">
+                                <label for="par_jour" style="color:black;">
+                                    Mot clé
+                                </label>
+                                <input type="text" name="search" id="search" >
+
+                                <button type="submit" class="btn btn-success btn-sm">
+                                    Filtrer
+                                </button>
+                            </form>
+                        </div>
+
+                      </div>
                             <div class="table-responsive">
                                 <div class="form-group">
 
@@ -138,10 +148,12 @@
                                           </th>
 
                                           <th>
-                                            <a href="{{route('admin.CondidateChangeStatus',[$i->id,'Accepté'])}}" class="btn btn-success">
+                                            <a href="{{route('admin.CondidateChangeStatus',[$i->id,'Accepté'])}}" class="btn btn-success"
+                                            onclick="return confirm('Êtes-vous sûr ?')">
                                                <i class="la la-save"></i> Accepté
                                             </a>
-                                            <a href="{{route('admin.CondidateChangeStatus',[$i->id,'Refusé'])}}" class="btn btn-danger">
+                                            <a href="{{route('admin.CondidateChangeStatus',[$i->id,'Refusé'])}}" class="btn btn-danger"
+                                            onclick="return confirm('Êtes-vous sûr ?')">
                                             <i class="la la-trash"></i> Refusé
                                             </a>
                                           </th>

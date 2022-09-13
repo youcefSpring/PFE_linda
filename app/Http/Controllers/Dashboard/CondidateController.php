@@ -14,8 +14,25 @@ class CondidateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        $items=Condidate::all();
+    public function index(Request $request){
+        $search=$request->search ?? null;
+
+        if(isset($search)){
+            $items=Condidate::where('name','like','%'.$search.'%')
+                        ->orWhere('nationality','like','%'.$search.'%')
+                        ->orWhere('date_n','like','%'.$search.'%')
+                        ->orWhere('lieu_n','like','%'.$search.'%')
+                        ->orWhere('phone','like','%'.$search.'%')
+                        ->orWhere('address','like','%'.$search.'%')
+                        ->orWhere('type_inscription','like','%'.$search.'%')
+                        ->orWhere('status','like','%'.$search.'%')
+                        ->get();
+
+                        // return $items;
+        }else{
+            $items=Condidate::all();
+        }
+
         // return $items;
         return view('Dashboard.condidates.index',compact('items'));
       }
