@@ -8,6 +8,7 @@ Route::view('/','index')->name('/');
 
 Route::view('/login','Dashboard.auth.login')->name('login');
 Route::view('/condidat','contact')->name('condidat');
+Route::view('/conditions','conditions')->name('conditions');
 Route::view('/conge','conge')->name('conge');
 
 Route::get('/c', function() {

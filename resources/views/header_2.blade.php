@@ -21,7 +21,7 @@
 
 
 
-                                             <li><a href="{{ route('condidat') }}"><i class="fa fa-address-book"></i>Candidature aux études universitaires</a> </li>
+                                             <li><a href="{{ route('conditions') }}"><i class="fa fa-address-book"></i>Candidature aux études universitaires</a> </li>
                                              <li><a href="{{ route('conge') }}"><i class="fa fa-address-book"></i>Congé Académique</a> </li>
                                              <li><a href="{{route('login')}}"><i class="fa fa-sign-in"></i>Connexion</a> </li>
                                         </ul>
