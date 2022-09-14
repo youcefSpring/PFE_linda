@@ -45,6 +45,8 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
         Route::get('create','LeaveController@create')->name('admin.LeaveCreate');
 
         Route::post('store','LeaveController@store')->name('admin.LeaveStore');
+        Route::post('date_depot/{id}','LeaveController@changeDateDepot')->name('admin.leave.changeDateDepot');
+
 
         Route::get('edit/{id}','LeaveController@edit')->name('admin.LeaveEdit');
 
@@ -66,6 +68,7 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
         Route::get('edit/{id}','CondidateController@edit')->name('admin.CondidateEdit');
 
         Route::post('update/{id}','CondidateController@update')->name('admin.CondidateUpdate');
+        Route::post('date_depot/{id}','CondidateController@changeDateDepot')->name('admin.condidate.changeDateDepot');
 
         Route::get('delete/{id}','CondidateController@delete')->name('admin.CondidateDelete');
 

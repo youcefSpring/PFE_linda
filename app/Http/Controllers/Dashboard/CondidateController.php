@@ -132,5 +132,27 @@ class CondidateController extends Controller
     }
 
 
+    public function changeDateDepot($id,Request $r)
+    {
+       $c=Condidate::find($id);
+       $c->date_depot=$r->date_depot;
+       $c->save();
+
+    $data["email"] = $c->email;
+    $data["title"] = 'Date dépot dossier original';
+    $data["body"] ='Salam, <br> Nous vous informons que la date pour déposer le dossier original est : '.$r->date_depot;
+
+    // $pdf = \PDF::loadView('Dashboard.emails.confirm', $data);
+
+    \Mail::send('Dashboard.emails.upload', $data, function($message)use($data) {
+        $message->to($data["email"], $data["email"])
+                ->subject($data["title"]);
+    });
+
+    // dd('sent');
+       return back()->with('success','Mise à jour avec succès');
+    }
+
+
 
 }

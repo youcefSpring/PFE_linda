@@ -138,6 +138,61 @@
                                             onclick="return confirm('Êtes-vous sûr ?')">
                                             <i class="la la-trash"></i> Refusé
                                             </a>
+
+                                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal{{$i->id}}">
+                                            <i class="la la-edit"></i> Date dépot
+                                             </button>
+
+                                            <div class="modal fade bd-example-modal-lg" id="exampleModal{{$i->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Date dépot</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form class="form" action="{{ route('admin.leave.changeDateDepot',$i->id)}}"
+                                          method="POST"
+                                          enctype="multipart/form-data">
+                                        @csrf
+
+
+                                          <input type="hidden" name="id" value="">
+
+                                        <div class="form-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="projectinput1">  Date</label>
+                                                        <input type="date" value="{{ $i->name}}" id="name"
+                                                               class="form-control"
+                                                               placeholder="name"
+                                                               name="date_depot"
+                                                               required>
+                                                        @error('date_depot')
+                                                            <span class="text-danger">{{ $message }}<span>
+                                                        @enderror
+                                                    </div>
+
+                                                </div>
+
+
+                                            </div>
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
                                           </th>
                                           </tr>
                                       @endforeach
